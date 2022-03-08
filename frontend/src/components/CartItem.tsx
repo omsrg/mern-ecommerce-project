@@ -29,10 +29,7 @@ const CartItem = ({ item, qtyChangeHandler, removeHandler }: Props) => {
 					</option>
 				))}
 			</select>
-			<button
-				className='border border-dark py-2 px-4 text-red-500'
-				onClick={() => removeHandler(item._id)}
-			>
+			<button className=' py-2 px-4 text-red-500' onClick={() => removeHandler(item._id)}>
 				<FaTrash />
 			</button>
 		</div>

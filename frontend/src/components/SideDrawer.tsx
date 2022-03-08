@@ -4,11 +4,7 @@ import { useSelector } from 'react-redux';
 import { AppState } from '../redux/store';
 import { CartItemType } from '../types/product';
 
-export interface ISideDrawer {
-	show: boolean;
-}
-
-const SideDrawer = ({ show }: ISideDrawer) => {
+const SideDrawer = ({ show }: { show: boolean }) => {
 	const cart = useSelector((state: AppState) => state.cart);
 	const { cartItems } = cart;
 

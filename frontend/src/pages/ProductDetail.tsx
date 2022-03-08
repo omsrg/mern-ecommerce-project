@@ -36,8 +36,8 @@ const ProductDetail = () => {
 			) : error ? (
 				<h2>{error}</h2>
 			) : (
-				<div className='grid gap-4 md:grid-cols-12'>
-					<div className='flex flex-col md:col-span-6 lg:col-span-8 lg:flex-row'>
+				<div className='grid gap-2 sm:grid-cols-12'>
+					<div className='flex flex-col sm:col-span-6 lg:col-span-8 lg:flex-row'>
 						<div className='m-4 flex justify-center'>
 							<img src={product.imageUrl} alt={product.name} />
 						</div>
@@ -47,8 +47,8 @@ const ProductDetail = () => {
 							<p className='p-4'>{product.description}</p>
 						</div>
 					</div>
-					<div className='flex justify-center md:col-span-6 lg:col-span-4'>
-						<div className='m-4 h-fit bg-white p-4 text-sm shadow-md md:w-64'>
+					<div className='flex justify-center sm:col-span-6 lg:col-span-4'>
+						<div className='d:w-64 m-4 h-fit w-full bg-white p-4 text-sm shadow-md'>
 							<p className='grid grid-cols-2 p-4'>
 								Price: <span>${product.price}</span>
 							</p>

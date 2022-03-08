@@ -14,7 +14,7 @@ function App() {
 		<Router>
 			<Navbar toggleClick={setIsOpen} />
 			<SideDrawer show={isOpen} />
-			<Backdrop show={isOpen} />
+			<Backdrop show={isOpen} setIsOpen={setIsOpen} />
 			<main>
 				<Routes>
 					<Route path='/' element={<Home />} />

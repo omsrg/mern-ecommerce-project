@@ -3,7 +3,7 @@ import { ProductType } from '../types/product';
 
 const Product = ({ name, imageUrl, description, _id, price }: ProductType) => {
 	return (
-		<div className='my-4 mx-auto flex cursor-pointer flex-col justify-between bg-white p-4 shadow-md lg:w-72'>
+		<div className='my-4 mx-auto flex cursor-pointer flex-col justify-between bg-white p-4 shadow-md lg:w-80 xl:w-72'>
 			<img src={imageUrl} alt={name} className='h-44 w-full rounded-md' />
 
 			<div className='space-y-2'>

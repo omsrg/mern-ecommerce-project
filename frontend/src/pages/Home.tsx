@@ -19,7 +19,7 @@ const HomeScreen = () => {
 	return (
 		<div className='layout my-4'>
 			<h2 className='mb-4 ml-2 text-2xl text-dark'>Latest Products</h2>
-			<div className='grid gap-4 lg:grid-cols-2 xl:grid-cols-4'>
+			<div className='grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4'>
 				{loading ? (
 					<h2>Loading...</h2>
 				) : error ? (
