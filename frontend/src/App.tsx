@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import ProductDetail from './pages/ProductDetail';
+import Cart from './pages/Cart';
+import Navbar from './components/Navbar';
+import Backdrop from './components/Backdrop';
+import SideDrawer from './components/SideDrawer';
+import { useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [isOpen, setIsOpen] = useState<boolean>(false);
+
+	return (
+		<Router>
+			<Navbar toggleClick={setIsOpen} />
+			<SideDrawer show={isOpen} />
+			<Backdrop show={isOpen} />
+			<main>
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='/product/:id' element={<ProductDetail />} />
+					<Route path='/cart' element={<Cart />} />
+				</Routes>
+			</main>
+		</Router>
+	);
 }
 
 export default App;
