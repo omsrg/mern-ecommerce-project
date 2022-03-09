@@ -1,21 +1,29 @@
-// import { CartItemType } from '../../types/product';
+import { CartItemType } from '../../types/product';
 import { CartActionType } from '../constants/cartConstants';
 
-const initialState = {
+interface IDefaultState {
+	cartItems: CartItemType[];
+}
+
+const initialState: IDefaultState = {
 	cartItems: [],
 };
 
-export const cartReducer = (state: any = initialState, action: CartActionType) => {
+export const cartReducer = (state: IDefaultState = initialState, action: CartActionType) => {
 	switch (action.type) {
 		case 'ADD_TO_CART':
 			const item = action.payload;
 
-			const existItems = state.cartItems.find((x: any) => x._id === item._id);
+			const existItems = state.cartItems.find(
+				(cartItem: CartItemType) => cartItem._id === item._id
+			);
 
 			if (existItems) {
 				return {
 					...state,
-					cartItems: state.cartItems.map((x: any) => (x._id === existItems._id ? item : x)),
+					cartItems: state.cartItems.map((cartItem: CartItemType) =>
+						cartItem._id === existItems._id ? item : cartItem
+					),
 				};
 			} else {
 				return {
@@ -27,7 +35,9 @@ export const cartReducer = (state: any = initialState, action: CartActionType) =
 		case 'REMOVE_FROM_CART':
 			return {
 				...state,
-				cartItems: state.cartItems.filter((x: any) => x._id !== action.payload),
+				cartItems: state.cartItems.filter(
+					(cartItem: CartItemType) => cartItem._id !== action.payload
+				),
 			};
 
 		default:

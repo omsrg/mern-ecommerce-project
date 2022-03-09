@@ -1,23 +1,17 @@
-export type CartItemType = {
+export type ProductType = {
+	_id: string;
 	name: string;
 	imageUrl: string;
 	price: number;
 	countInStock: number;
-	_id?: string;
-	qty: number;
+	description: string;
 };
 
-export type ProductType = Omit<CartItemType, 'product' | 'qty'> & { description: string };
+export type CartItemType = {
+	qty: number;
+} & Omit<ProductType, 'description'>;
 
-// export const product: ProductType = {
-// 	// product: 'etet',
-// 	// qty: 4 ,
-// 	name: 'hha',
-// 	price: 3533,
-// 	imageUrl: 'ete',
-// 	countInStock: 9,
-// 	description: 'gag'
-// }
+// export type ProductType = Omit<CartItemType, 'product' | 'qty'> & { description: string };
 
 // type XY = Pick<XYZ, Exclude<keyof XYZ, "z">>
 // type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>

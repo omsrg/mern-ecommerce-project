@@ -1,3 +1,5 @@
+import { ProductType } from '../../types/product';
+
 export const GET_PRODUCTS_REQUEST = 'GET_PRODUCTS_REQUEST';
 export const GET_PRODUCTS_SUCCESS = 'GET_PRODUCTS_SUCCESS';
 export const GET_PRODUCTS_FAIL = 'GET_PRODUCTS_FAIL';
@@ -13,7 +15,7 @@ interface IGetProductsRequest {
 
 interface IGetProductSuccess {
 	type: typeof GET_PRODUCTS_SUCCESS;
-	payload: any;
+	payload: ProductType[];
 }
 
 interface IGetProductsFail {
@@ -29,7 +31,7 @@ interface IGetDetailsRequest {
 
 interface IGetDetailsSuccess {
 	type: typeof GET_PRODUCT_DETAILS_SUCCESS;
-	payload: any;
+	payload: ProductType;
 }
 
 interface IGetDetailsFail {

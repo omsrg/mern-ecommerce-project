@@ -18,7 +18,6 @@ export const getProducts = () => async (dispatch: Dispatch<GetProductAction>) =>
 		dispatch({
 			type: 'GET_PRODUCTS_FAIL',
 			payload: error.response ? error.response?.data?.message : error.message,
-			// payload: false
 		});
 	}
 };
@@ -40,7 +39,6 @@ export const getProductDetails =
 			dispatch({
 				type: 'GET_PRODUCT_DETAILS_FAIL',
 				payload: error.response ? error.response?.data?.message : error.message,
-				// payload: false
 			});
 		}
 	};

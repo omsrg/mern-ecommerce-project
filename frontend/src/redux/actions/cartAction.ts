@@ -16,7 +16,7 @@ export const addToCart =
 				imageUrl: data.imageUrl,
 				price: data.price,
 				countInStock: data.countInStock,
-				qty: qty,
+				qty,
 			},
 		});
 

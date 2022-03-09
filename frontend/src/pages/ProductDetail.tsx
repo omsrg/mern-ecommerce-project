@@ -5,7 +5,6 @@ import { addToCart } from '../redux/actions/cartAction';
 import { AppState } from '../redux/store';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-// import { RouteComponentProps } from "react-router-dom";
 
 const ProductDetail = () => {
 	const [qty, setQty] = useState(1);
@@ -16,13 +15,18 @@ const ProductDetail = () => {
 	const productDetails = useSelector((state: AppState) => state.getProductDetails);
 	const { product, loading, error } = productDetails;
 
+	console.log('Product:', product);
+	console.log('Loading:', loading);
+
 	const { id } = useParams();
 
 	useEffect(() => {
+		console.log('render');
 		if (product && id !== product._id) {
 			dispatch(getProductDetails(id));
 		}
-	}, [dispatch, product, id]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [dispatch]);
 
 	const addToCartHandler = () => {
 		dispatch(addToCart(product._id, qty));
