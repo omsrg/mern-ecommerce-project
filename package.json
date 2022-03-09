@@ -1,7 +1,7 @@
 {
 	"name": "web-ecommerce-mern",
 	"version": "1.0.0",
-	"main": "server.js",
+	"main": "dist/server.js",
 	"license": "MIT",
 	"scripts": {
 		"start": "node dist/server.js",
