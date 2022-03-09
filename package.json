@@ -9,7 +9,7 @@
 		"build": "tsc",
 		"client": "yarn --cwd frontend start",
 		"dev": "concurrently \"yarn run server\" \"yarn run client\"",
-		"data:import": "ts-node backend/seederScript.ts"
+		"heroku-postbuild": "yarn --cwd frontend install && yarn --cwd frontend run build"
 	},
 	"dependencies": {
 		"dotenv": "^16.0.0",
